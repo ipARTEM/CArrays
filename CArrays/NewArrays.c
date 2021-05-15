@@ -6,13 +6,21 @@
 
 void printArray(int* array, int length)
 {
-	
+	int i;
+	for (i = 0; i < length; i++)
+		printf("%d", array[i]);
 
 }
 float average(int* array, int length)
 {
 	float result = 0;
+	int i;
+	for  (i = 0; i < length; i++)
+	{
+		result += *(array + i);
+	}
 	return result;
+	
 }
 
 int main(int argc, const char*argv[])
@@ -35,10 +43,9 @@ int main(int argc, const char*argv[])
 	}
 
 	printf("\n And the average is: ");
-	for (i = 0; i < ARRAY_LENGTH; i++)
-		result += *(arr+i);
+	
 
-	printf("%f \n", result / ARRAY_LENGTH);
+	printf("%f \n", average(arr, ARRAY_LENGTH));
 
 
 	return 0;
